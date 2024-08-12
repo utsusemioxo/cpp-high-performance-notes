@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(benchmark_example benchmark_main.cpp)
 
-add_executable(test_example test_main.cpp)
+add_executable(placement_new test_placement_new.cpp)
 
 set(BENCHMARK_ENABLE_TESTING NO)
 
@@ -30,6 +30,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(benchmark googletest)
 
 target_link_libraries(benchmark_example benchmark::benchmark)
-target_link_libraries(test_example GTest::gtest GTest::gtest_main)
+target_link_libraries(placement_new GTest::gtest GTest::gtest_main)
 
-add_custom_target(run_tests COMMAND test_example)
+add_custom_target(run_tests COMMAND placement_new)
